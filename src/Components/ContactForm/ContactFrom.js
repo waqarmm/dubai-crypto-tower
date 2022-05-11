@@ -99,7 +99,7 @@ const ContactFrom = () => {
             review our Privacy Policy."
           />
           <Paragraph
-            className="text-base text-white tracking-wide"
+            className="text-sm text-white tracking-wide"
             para=" By clicking submit below, you consent to allow DMCC to store and
             process the personal information submitted above to provide you the
             content requested."
