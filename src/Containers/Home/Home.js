@@ -120,7 +120,7 @@ const Home = () => {
         </div>
       </section>
       <ContactFrom />
-      <section className="h-screen max-w-screen-xl 2xl:container  mx-auto px-4 xl:px-16  my-16">
+      <section className="h-auto md:h-screen max-w-screen-xl 2xl:container  mx-auto px-4 xl:px-16  my-16">
         <div className=" h-full flex justify-start flex-col">
           <H2 className="text-center xl:text-5xl">LATEST NEWS</H2>
           <Link to="" className="mt-16 font-body h-full ">
