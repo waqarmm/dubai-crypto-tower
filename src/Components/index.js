@@ -1,0 +1,13 @@
+export { default as NavLinks } from "./NavLinks/NavLinks";
+export { default as Header } from "./Header/Header";
+export { default as ContactFrom } from "./ContactForm/ContactFrom";
+export { default as Footer } from "./Footer/Footer";
+export { default as Video } from "./Video/Video";
+export { default as AnchorTag } from "./AnchorTag/AnchorTag";
+export { default as H2 } from "./H2/H2";
+export { default as H4 } from "./H4/H4";
+export { default as SpaceY } from "./SpaceY/SpaceY";
+export { default as RegisterButton } from "./RegisterButton/RegisterButton";
+export { default as Paragraph } from "./Paragraph/Paragraph";
+export { default as Card } from "./Card/Card";
+export { default as BusinessAdvertisment } from "./BusinessAdvertisment/BusinessAdvertisment";
