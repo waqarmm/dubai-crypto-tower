@@ -3,7 +3,7 @@ import React from "react";
 const Select = ({ label, className, name, children }) => {
   return (
     <div className="w-full flex flex-col">
-      <label for="cars" className="text-white text-sm">
+      <label htmlFor="form" className="text-white text-sm">
         {label}
       </label>
       <select

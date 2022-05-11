@@ -16,7 +16,10 @@ const ContactFrom = () => {
     setChecked(checked);
   };
   return (
-    <section className="h-full overflow-hidden relative w-full  bg-galaxy z-10">
+    <section
+      id="interested"
+      className="h-full overflow-hidden relative w-full  bg-galaxy z-10"
+    >
       <div className="w-full -z-10 relative   top-0 mx-auto mb-2 sm:mb-0 bg-opacity-60">
         <Video
           videoURL={glitterBomb}

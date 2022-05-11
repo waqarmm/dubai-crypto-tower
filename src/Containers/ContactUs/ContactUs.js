@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import {
   Header,
   AnchorTag,
@@ -10,6 +11,21 @@ import {
 } from "../../Components";
 
 const ContactUs = () => {
+  const { pathname, hash, key } = useLocation();
+
+  React.useEffect(() => {
+    if (hash === "") {
+      window.scrollTo(0, 0);
+    } else {
+      setTimeout(() => {
+        const id = hash.replace("#", "");
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView();
+        }
+      }, 0);
+    }
+  }, [pathname, hash, key]);
   return (
     <>
       <Header bgImg="bg-contactUs">
@@ -19,7 +35,7 @@ const ContactUs = () => {
         </H2>
       </Header>
       <section className="w-full max-w-screen-xl 2xl:container  mx-auto px-4 xl:px-16">
-        <RegisterButton title="register your interest" />
+        <RegisterButton title="register your interest" link="#interested" />
         <div className="pt-12 w-full sm:w-8/12 mx-auto">
           <Paragraph
             className=" text-center  font-body text-lg"

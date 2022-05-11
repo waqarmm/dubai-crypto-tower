@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import {
   Video,
   AnchorTag,
@@ -15,6 +16,22 @@ import towerAnimation from "../../assets/videos/towerAnimation.mp4";
 
 const Home = () => {
   const [videoURL, setVideoURL] = useState(heroVideo);
+  const { pathname, hash, key } = useLocation();
+
+  React.useEffect(() => {
+    if (hash === "") {
+      window.scrollTo(0, 0);
+    } else {
+      setTimeout(() => {
+        const id = hash.replace("#", "");
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView();
+        }
+      }, 0);
+    }
+  }, [pathname, hash, key]);
+
   return (
     <div className="h-100 w-full">
       <section className="w-full bg-black">
@@ -22,7 +39,7 @@ const Home = () => {
         <Video videoURL={videoURL} />
       </section>
       <section className="w-full max-w-screen-xl 2xl:container  mx-auto px-4 xl:px-16">
-        <RegisterButton title="register your interest" />
+        <RegisterButton title="register your interest" link="#interested" />
         <div className="grid grid-cols-12  md:grid-cols-6 py-10 lg:py-20 sm:gap-x-4 lg:gap-x-24">
           <div className="w-full lg:aspect-square col-span-12 md:col-span-3 mb-6 sm:mb-0">
             <img src={UptownDubai} alt="CryptoDubai" className="lg:mt-7" />
@@ -53,7 +70,7 @@ const Home = () => {
             </div>
             <div className="text-center">
               <AnchorTag
-                to="#"
+                to="#interested"
                 className="text-black border-black bg-white px-6 lg:px-4 xl:px-16 hover:text-white hover:bg-black"
                 title=" register your interest"
               />
@@ -69,7 +86,7 @@ const Home = () => {
                 Providing residents and guests with service excellence, yet
                 delivered with an audacious and fashionable twist"
         buttonText="register your interest"
-        link="/"
+        link="#interested"
         background="bg-uptown"
         justifyContent="end"
         alignContent="evenly"
@@ -162,7 +179,7 @@ const Home = () => {
           <div className="text-center mt-20 lg:mt-10">
             <AnchorTag
               to="#"
-              className="border-black text-black px-6 lg:px-4  xl:px-16 hover:text-black hover:bg-white"
+              className="border-black text-black px-6 lg:px-4  xl:px-16 hover:text-white hover:bg-black transition-all"
               title="view more"
             />
           </div>

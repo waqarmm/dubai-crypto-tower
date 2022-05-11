@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import {
   Video,
   RegisterButton,
@@ -69,6 +70,21 @@ const SOResidence = () => {
   const [videoURL, setVideoURL] = useState(
     "https://www.uptowndubai.ae/application/files/5815/6093/5798/so_hotel.mp4"
   );
+  const { pathname, hash, key } = useLocation();
+
+  React.useEffect(() => {
+    if (hash === "") {
+      window.scrollTo(0, 0);
+    } else {
+      setTimeout(() => {
+        const id = hash.replace("#", "");
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView();
+        }
+      }, 0);
+    }
+  }, [pathname, hash, key]);
   return (
     <>
       <section className="w-full bg-black">
@@ -77,7 +93,7 @@ const SOResidence = () => {
       </section>
       <section className="w-full max-w-screen-xl 2xl:container  mx-auto mb-16 px-4 xl:px-16">
         <div className="w-full max-w-screen-xl 2xl:container mx-auto">
-          <RegisterButton title="register your interest" />
+          <RegisterButton title="register your interest" link="#interested" />
           <div className="pt-12 w-full sm:w-3/4 mx-auto">
             <Paragraph
               className=" text-center  font-body text-lg"
@@ -89,7 +105,7 @@ const SOResidence = () => {
       <BusinessAdvertisment
         para="SO/ Crypto Dubai is an artistic vision brought to life. From avant-garde in-room touches to inspiring installations, mixed with interior themes and motifs, the hotel and residences embrace the imagination with stunning effect."
         buttonText="register your interest"
-        link="/"
+        link="#interested"
         background="bg-SOStyle"
         className="mr-3"
         justifyContent="end"
@@ -175,7 +191,7 @@ const SOResidence = () => {
               </div>
               <div className="text-center my-4 md:my-0">
                 <AnchorTag
-                  to="#"
+                  to="#interested"
                   className="text-black border-black bg-transparent px-6 lg:px-4 xl:px-10 hover:text-white hover:bg-black"
                   title="explore more benifits"
                 />

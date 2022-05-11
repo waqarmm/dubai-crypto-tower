@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import {
   Header,
   ContactFrom,
@@ -13,6 +14,21 @@ import Architect from "../../assets/images/architect.png";
 import AccorHotel from "../../assets/images/accorHotel.png";
 
 const Creator = () => {
+  const { pathname, hash, key } = useLocation();
+
+  React.useEffect(() => {
+    if (hash === "") {
+      window.scrollTo(0, 0);
+    } else {
+      setTimeout(() => {
+        const id = hash.replace("#", "");
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView();
+        }
+      }, 0);
+    }
+  }, [pathname, hash, key]);
   return (
     <>
       <Header bgImg="bg-creators">
@@ -28,7 +44,7 @@ const Creator = () => {
       </Header>
       <section className="w-full max-w-screen-xl 2xl:container  mx-auto px-4 xl:px-16">
         <div className="w-full max-w-screen-xl 2xl:container  ">
-          <RegisterButton title="register your interest" />
+          <RegisterButton title="register your interest" link="#interested" />
           <div className="pt-12 w-full sm:w-[80%] mx-auto">
             <Paragraph
               className=" text-center  font-body text-lg"

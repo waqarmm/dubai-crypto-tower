@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import {
   H2,
   Header,
@@ -13,6 +14,21 @@ import {
 
 const OfficeLeasing = () => {
   const [checked, setChecked] = useState(false);
+  const { pathname, hash, key } = useLocation();
+
+  React.useEffect(() => {
+    if (hash === "") {
+      window.scrollTo(0, 0);
+    } else {
+      setTimeout(() => {
+        const id = hash.replace("#", "");
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView();
+        }
+      }, 0);
+    }
+  }, [pathname, hash, key]);
 
   const ToggleChange = (e) => {
     const target = e.target.name;
@@ -33,7 +49,7 @@ const OfficeLeasing = () => {
       </Header>
       <section className="w-full max-w-screen-xl 2xl:container  mx-auto mb-16 px-4 xl:px-16">
         <div className="w-full max-w-screen-xl 2xl:container mx-auto">
-          <RegisterButton title="fill out form" />
+          <RegisterButton title="fill out form" link="#interested" />
         </div>
       </section>
       <section className="w-full  px-4 xl:px-16 bg-darkGrey">
@@ -80,12 +96,11 @@ const OfficeLeasing = () => {
             />
             <Paragraph
               className="pb-6 pt-2 font-medium font-body text-lg tracking-wide"
-              para="Register your interest by clicking the button below.
-                "
+              para="Register your interest by clicking the button below."
             />
             <div className="text-left">
               <AnchorTag
-                to="#"
+                to="#interested"
                 className="text-black border-black bg-transparent px-6 lg:px-4 xl:px-10 hover:text-white hover:bg-black"
                 title="send an enquiry"
               />
@@ -111,7 +126,7 @@ const OfficeLeasing = () => {
               />
               <div className="text-left py-8">
                 <AnchorTag
-                  to="#"
+                  to="#interested"
                   className="text-black border-black bg-transparent px-6 lg:px-4 xl:px-10 hover:text-white hover:bg-black"
                   title="send an enquiry"
                 />
@@ -128,7 +143,10 @@ const OfficeLeasing = () => {
         </H2>
         <div className="w-full h-full bg-mapResize aspect-video bg-center bg-no-repeat  bg-contain"></div>
       </section>
-      <section className="h-full overflow-hidden relative w-full  bg-black z-10">
+      <section
+        id="interested"
+        className="h-full overflow-hidden relative w-full  bg-black z-10"
+      >
         <div className="mx-auto h-full z-10 w-full flex flex-col items-center py-8 lg:py-20 px-4">
           <H2 className="text-center text-white my-2 text-3xl sm:text-4xl leading-lhlg xl:text-5xl">
             SEND AN ENQUIRY

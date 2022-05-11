@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import {
   Header,
   RegisterButton,
@@ -9,6 +10,21 @@ import {
   ContactFrom,
 } from "../../Components";
 const CryptoTower = () => {
+  const { pathname, hash, key } = useLocation();
+
+  React.useEffect(() => {
+    if (hash === "") {
+      window.scrollTo(0, 0);
+    } else {
+      setTimeout(() => {
+        const id = hash.replace("#", "");
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView();
+        }
+      }, 0);
+    }
+  }, [pathname, hash, key]);
   return (
     <>
       <Header bgImg="bg-uptwonTower">
@@ -20,7 +36,7 @@ const CryptoTower = () => {
       </Header>
       <section className="w-full max-w-screen-xl 2xl:container  mx-auto mb-10 px-4 xl:px-16">
         <div className="w-full max-w-screen-xl 2xl:container mx-auto">
-          <RegisterButton title="register your interest" />
+          <RegisterButton title="register your interest" link="#interested" />
           <div className="pt-12 w-full sm:w-[80%] mx-auto">
             <Paragraph
               className=" text-center  font-body text-lg"
@@ -38,7 +54,7 @@ const CryptoTower = () => {
       <BusinessAdvertisment
         para="Set to be home to the world’s most powerful global brands, specialist commodities and innovative start-ups, Crypto Tower provides premium commercial spaces and fully-serviced offices to the highest specifications."
         buttonText="register your interest"
-        link="/"
+        link="#interested"
         background="bg-business"
         className="mr-3"
         justifyContent="end"
@@ -59,7 +75,7 @@ const CryptoTower = () => {
       <BusinessAdvertisment
         para="Fashion-led SO/ Sofitel is a high-end boutique hotel and collection of branded residences. Each SO/ development is entirely unique and inspired by local influences."
         buttonText="FIND OUT MORE"
-        link="/"
+        link="#interested"
         background="bg-dubaiResidence"
         className="mr-3"
         justifyContent="start"
@@ -73,7 +89,7 @@ const CryptoTower = () => {
       <BusinessAdvertisment
         para="SO/ Sofitel hotels are a playful mix of sophistication and the dynamic style of each locale. Highly creative and fashion-led, each SO/ Sofitel is an avant-garde masterpiece imaginatively inspired by an iconic, signature designer. Unique to the Middle East, SO/ Crypto Dubai will be the first and only SO/ hotel and branded residences in the region."
         buttonText="comming soon"
-        link="/"
+        link="#interested"
         background="bg-dubaiHotel"
         className="mr-3"
         justifyContent="end"
