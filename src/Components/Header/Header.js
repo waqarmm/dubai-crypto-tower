@@ -1,9 +1,9 @@
 import React from "react";
 
-const Header = ({ title, bgImg, children }) => {
+const Header = ({ bgImg, children }) => {
   return (
     <section
-      className={`w-full relative aspect-video lg:h-screen  bg-center bg-no-repeat  bg-cover opacity-90 ${bgImg}`}
+      className={`w-full relative aspect-video lg:h-screen  bg-center bg-no-repeat  bg-cover  ${bgImg}`}
     >
       <div className="w-full h-full flex justify-center items-center ">
         {children}

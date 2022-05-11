@@ -16,19 +16,23 @@ const Creator = () => {
   return (
     <>
       <Header bgImg="bg-creators">
-        <H2 className="text-xl md:text-heading1 font-semibold text-center w-3/4 lg:w-2/4 xl:w-5/12 2xl:w-1/4 px-2 leading-4 md:leading-lhxl xl:leading-lh2xl text-white uppercase">
+        <div className="bg-header-gradient absolute h-screen w-full"></div>
+        <H2 className="text-xl md:text-heading1 font-semibold text-center w-3/4 lg:w-2/4 xl:w-5/12 2xl:w-1/4 px-2 leading-4 md:leading-lhxl xl:leading-lh2xl text-white uppercase opacity-95  ">
           Creating{" "}
-          <span className="italic lowercase font-medium">a new icon of</span>{" "}
+          <span className="italic lowercase font-medium">
+            a new <br />
+            icon of
+          </span>{" "}
           Dubai
         </H2>
       </Header>
       <section className="w-full max-w-screen-xl 2xl:container  mx-auto px-4 xl:px-16">
-        <div className="w-full max-w-screen-xl 2xl:container mx-auto px-4 xl:px-16">
-          <RegisterButton />
+        <div className="w-full max-w-screen-xl 2xl:container  ">
+          <RegisterButton title="register your interest" />
           <div className="pt-12 w-full sm:w-[80%] mx-auto">
             <Paragraph
               className=" text-center  font-body text-lg"
-              para="With its two iconic towers, Uptown Dubai will set a new standard in luxury and style, adding its unique signature to the impressive skyline of Dubai. To bring this ambitious vision to life, we gathered a global team of the world’s finest developers, architects and designers."
+              para="With its two iconic towers, Crypto Dubai will set a new standard in luxury and style, adding its unique signature to the impressive skyline of Dubai. To bring this ambitious vision to life, we gathered a global team of the world’s finest developers, architects and designers."
             />
           </div>
         </div>
@@ -41,7 +45,7 @@ const Creator = () => {
             </H2>
             <Paragraph
               className="py-4 font-medium font-body text-lg tracking-wide"
-              para="DMCC, the number one global free zone of the year for the past five years and master planners of the JLT district, are the driving force behind the iconic Uptown Dubai development, transforming the way people can live, work and be entertained."
+              para="DMCC, the number one global free zone of the year for the past five years and master planners of the JLT district, are the driving force behind the iconic Crypto Dubai development, transforming the way people can live, work and be entertained."
             />
             <div className="text-center pt-4">
               <AnchorTag
@@ -61,7 +65,7 @@ const Creator = () => {
               <img src={Architect} alt={Architect} className="py-6" />
               <Paragraph
                 className="py-4 font-medium font-body text-lg tracking-wide"
-                para="Founded in 2008, Adrian Smith and Gordon Gill (AS+GG), the visionaries behind some of the world’s tallest buildings including the Burj Khalifa and Jeddah Tower, are the perfect architects to create Uptown Dubai’s iconic super towers."
+                para="Founded in 2008, Adrian Smith and Gordon Gill (AS+GG), the visionaries behind some of the world’s tallest buildings including the Burj Khalifa and Jeddah Tower, are the perfect architects to create Crypto Dubai’s iconic super towers."
               />
               <div className="text-center pt-4">
                 <AnchorTag

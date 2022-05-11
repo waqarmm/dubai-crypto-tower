@@ -1,6 +1,6 @@
 export { default as Layout } from "./Layout/Layout";
 export { default as Home } from "./Home/Home";
-export { default as UpTownTower } from "./UpTownTower/UpTownTower";
+export { default as CryptoTower } from "./CryptoTower/CryptoTower";
 export { default as OfficeLeasing } from "./OfficeLeasing/OfficeLeasing";
 export { default as SOResidence } from "./SOResidence/SOResidence";
 export { default as Creator } from "./Creators/Creator";

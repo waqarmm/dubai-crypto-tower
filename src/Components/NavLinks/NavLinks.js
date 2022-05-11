@@ -1,11 +1,16 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/images/uptown-logo.svg";
+import cryptoTower from "../../assets/images/cryptoTower.png";
 import Divider from "../Divider/Divider";
 
 const NavLinks = () => {
   const [toggle, setToggle] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = useLocation().pathname;
+  //  change office leasing logo by pathname
+  const path = "/uptown-tower/office-leasing";
 
   const handleOpen = () => {
     setToggle(true);
@@ -13,6 +18,15 @@ const NavLinks = () => {
   const handleClose = () => {
     setToggle(false);
   };
+  const handleNavlink = () => {
+    setToggle(false);
+  };
+  const handleDropdown = () => {
+    setTimeout(() => {
+      setMenuOpen(false);
+    }, 1000);
+  };
+
   return (
     <header
       className={`absolute w-full	 xl:px-16 z-10 ${
@@ -33,16 +47,23 @@ const NavLinks = () => {
           </span>
         )}
         <div
-          className={` items-center flex-shrink-0 text-white  ${
-            toggle ? "hidden" : "flex"
-          }`}
+          className={` items-center flex-shrink-0 text-white flex ${
+            pathname === path && "absolute top-[10%] w-[15%] lg:w-[10%] "
+          }  ${toggle ? "hidden" : `flex `}`}
         >
           <Link to="/">
-            {" "}
-            <img src={Logo} alt="logo" className="w-20 md:w-auto" />
+            <img
+              src={pathname === path ? cryptoTower : Logo}
+              alt="logo"
+              className="w-20 md:w-auto"
+            />
           </Link>
         </div>
-        <div className="block lg:hidden">
+        <div
+          className={`block lg:hidden  ${
+            pathname === path && "flex justify-end w-full mt-6"
+          }`}
+        >
           <button
             onClick={handleOpen}
             className="flex items-center text-white border-white hover:text-white hover:border-white cursor-pointer"
@@ -59,7 +80,9 @@ const NavLinks = () => {
         </div>
         <div
           className={`w-full  flex-grow lg:flex lg:items-center lg:w-auto ${
-            toggle ? "flex justify-center h-full" : "hidden"
+            toggle
+              ? "flex justify-center h-full"
+              : `hidden ${pathname === path && "mt-8"}`
           }`}
         >
           <ul
@@ -70,28 +93,53 @@ const NavLinks = () => {
             <li className=" lg:py-0 pl-2  mb-32 lg:mb-0 lg:border-l h-4 hover:transition-all">
               <Link
                 onMouseOver={() => setMenuOpen(true)}
-                onMouseLeave={() => {
-                  setTimeout(() => {
-                    setMenuOpen(false);
-                  }, 1000);
-                }}
-                to="/uptown-tower"
+                onMouseLeave={handleDropdown}
+                onClick={handleNavlink}
+                to="/crypto-tower"
                 className="block lg:inline-block lg:hover:text-white"
               >
-                <span className="lg:hover:border-b-3   border-white  pb-1 ">
-                  uptown tower
+                <span
+                  className={`lg:hover:border-b-3   border-white  pb-1 ${
+                    pathname === "/crypto-tower" ||
+                    pathname === "/crypto-tower/office-leasing" ||
+                    pathname === "/crypto-tower/so-residences"
+                      ? "border-b-3"
+                      : ""
+                  }`}
+                >
+                  crypto tower
                 </span>
                 {menuOpen && (
                   <div className="hidden lg:flex flex-col text-xs space-y-2 mt-2 ">
-                    <Link to="/uptown-tower/office-leasing">
+                    <Link
+                      to="/crypto-tower/office-leasing"
+                      onClick={handleNavlink}
+                      onMouseLeave={handleDropdown}
+                    >
                       Office Leasing
                     </Link>
-                    <Link to="/uptown-tower/so-residences">SO/ Residences</Link>
+                    <Link
+                      to="/crypto-tower/so-residences"
+                      onClick={handleNavlink}
+                      onMouseLeave={handleDropdown}
+                    >
+                      SO/ Residences
+                    </Link>
                   </div>
                 )}
                 <div className="lg:hidden  flex flex-col space-y-2 mt-2 text-xl font-normal">
-                  <Link to="/uptown-tower/office-leasing">Office Leasing</Link>
-                  <Link to="/uptown-tower/so-residences">SO/ Residences</Link>
+                  <Link
+                    to="/crypto-tower/office-leasing"
+                    onClick={handleNavlink}
+                  >
+                    Office Leasing
+                  </Link>
+                  <Link
+                    to="/crypto-tower/so-residences"
+                    onClick={handleNavlink}
+                  >
+                    SO/ Residences
+                  </Link>
                 </div>
               </Link>
             </li>
@@ -99,9 +147,14 @@ const NavLinks = () => {
               <Link
                 to="/creators"
                 className="blocklg:inline-block lg:hover:text-white"
+                onClick={handleNavlink}
               >
                 <Divider className="lg:hidden w-1/4" />
-                <span className="lg:hover:border-b-3  lg:border-white  pb-1 ">
+                <span
+                  className={`lg:hover:border-b-3   border-white  pb-1 ${
+                    pathname === "/creators" ? "border-b-3" : ""
+                  }`}
+                >
                   creators
                 </span>
               </Link>
@@ -110,9 +163,14 @@ const NavLinks = () => {
               <Link
                 to="/locations"
                 className="blocklg:inline-block lg:hover:text-white"
+                onClick={handleNavlink}
               >
                 <Divider className="lg:hidden w-1/4" />
-                <span className="lg:hover:border-b-3   border-white  pb-1 ">
+                <span
+                  className={`lg:hover:border-b-3   border-white  pb-1 ${
+                    pathname === "/locations" ? "border-b-3" : ""
+                  }`}
+                >
                   locations
                 </span>
               </Link>
@@ -121,9 +179,14 @@ const NavLinks = () => {
               <Link
                 to="/contact-us"
                 className="blocklg:inline-block lg:hover:text-white"
+                onClick={handleNavlink}
               >
                 <Divider className="lg:hidden w-1/4" />
-                <span className="lg:hover:border-b-3   border-white  pb-1 ">
+                <span
+                  className={`lg:hover:border-b-3   border-white  pb-1 ${
+                    pathname === "/contact-us" ? "border-b-3" : ""
+                  }`}
+                >
                   contact us
                 </span>
               </Link>

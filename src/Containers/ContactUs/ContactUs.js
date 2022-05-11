@@ -13,14 +13,17 @@ const ContactUs = () => {
   return (
     <>
       <Header bgImg="bg-contactUs">
-        <H2 className="uppercase text-white w-5/12 text-center">contact us</H2>
+        <div className="bg-header-gradient absolute h-screen w-full"></div>
+        <H2 className="uppercase text-white w-5/12 text-center opacity-95  ">
+          contact us
+        </H2>
       </Header>
       <section className="w-full max-w-screen-xl 2xl:container  mx-auto px-4 xl:px-16">
-        <RegisterButton />
+        <RegisterButton title="register your interest" />
         <div className="pt-12 w-full sm:w-8/12 mx-auto">
           <Paragraph
             className=" text-center  font-body text-lg"
-            para="If you’d like to know more about Uptown Dubai, our team of experts are ready to answer your enquires. Call using the number below or visit our sales centre."
+            para="If you’d like to know more about Crypto Dubai, our team of experts are ready to answer your enquires. Call using the number below or visit our sales centre."
           />
         </div>
         <div className="grid grid-cols-12  md:grid-cols-6 py-10 lg:py-12 sm:gap-x-4 lg:gap-x-24">

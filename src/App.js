@@ -1,11 +1,11 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./input.css";
 import {
   Layout,
   Home,
-  UpTownTower,
+  CryptoTower,
   OfficeLeasing,
   SOResidence,
   Creator,
@@ -20,12 +20,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/creators" element={<Creator />} />
-          <Route path="/uptown-tower" element={<UpTownTower />} />
+          <Route path="/crypto-tower" element={<CryptoTower />} />
           <Route
-            path="/uptown-tower/office-leasing"
+            path="/crypto-tower/office-leasing"
             element={<OfficeLeasing />}
           />
-          <Route path="/uptown-tower/so-residences" element={<SOResidence />} />
+          <Route path="/crypto-tower/so-residences" element={<SOResidence />} />
           <Route path="/locations" element={<Locations />} />
           <Route path="/contact-us" element={<ContactUs />} />
         </Routes>

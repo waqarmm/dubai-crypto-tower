@@ -45,35 +45,39 @@ const Locations = () => {
   return (
     <>
       <Header title="" bgImg="bg-locations">
-        <H2 className="text-xl md:text-heading1 font-semibold text-center w-3/4 lg:w-2/4 xl:w-5/12 2xl:w-1/4 px-2 leading-4 md:leading-lhxl xl:leading-lh2xl text-white uppercase">
+        <div className="bg-header-gradient absolute h-screen w-full"></div>
+        <H2 className="text-xl md:text-heading1 font-semibold text-center w-3/4 lg:w-2/4 xl:w-5/12 2xl:w-1/4 px-2 leading-4 md:leading-lhxl xl:leading-lh2xl text-white uppercase opacity-95  ">
           the new hub <br />
           <span className="italic lowercase font-medium"> of</span> Dubai
         </H2>
       </Header>
       <section className="w-full">
         <div className="w-full max-w-screen-xl 2xl:container mx-auto px-4 xl:px-16">
-          <RegisterButton />
+          <RegisterButton title="register your interest" />
           <div className="pt-12 w-full sm:w-[72%] mx-auto">
             <Paragraph
               className=" text-center  font-body text-lg"
-              para="Uptown Dubai’s location is ideally suited to provide easy access to all the city has to offer. Direct links to Dubai Metro and Sheikh Zayed road connect Uptown Dubai to two international airports, with many major attractions and beachfronts only minutes away."
+              para="Crypto Dubai’s location is ideally suited to provide easy access to all the city has to offer. Direct links to Dubai Metro and Sheikh Zayed road connect Crypto Dubai to two international airports, with many major attractions and beachfronts only minutes away."
             />
           </div>
         </div>
         <div className="w-full h-full bg-mapResize aspect-video bg-center bg-no-repeat  bg-contain"></div>
       </section>
       <section className="w-full max-w-screen-xl 2xl:container mx-auto py-16 px-4 xl:px-16">
-        <H2 className="w-8/12 text-center mx-auto">
+        <H2 className="w-full lg:w-8/12 text-center mx-auto">
           PRIME LOCATION
-          <span className="italic font-medium xl:ml-4">for </span>
+          <span className="italic font-medium  xl:ml-4">for </span>
           <br />
           <span className="sm:text-heading2 xl:text-6xl">BUSINESS </span>
           <span className="italic font-medium ">and </span>
           <span className="sm:text-heading2 xl:text-6xl">LEISURE </span>
         </H2>
-        <div className="grid grid-cols-12  md:grid-cols-6 lg:grid-cols-12 py-10 lg:py-12 sm:gap-7 ">
+        <div className="grid grid-cols-12  md:grid-cols-12 lg:grid-cols-12 py-10 lg:py-12 sm:gap-7 gap-y-4">
           {primeLocation.map((item, i) => (
-            <div className="w-full  col-span-12 md:col-span-4 " key={i}>
+            <div
+              className="w-full  col-span-12 md:col-span-6 lg:md:col-span-4 "
+              key={i}
+            >
               <Card img={item.img} title={item.title} />
             </div>
           ))}

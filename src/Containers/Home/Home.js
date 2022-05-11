@@ -10,35 +10,36 @@ import {
   BusinessAdvertisment,
 } from "../../Components";
 import UptownDubai from "../../assets/images/Uptown-Dubai-Aerial-LP.png";
+import heroVideo from "../../assets/videos/heroVideo.mp4";
+import towerAnimation from "../../assets/videos/towerAnimation.mp4";
 
 const Home = () => {
-  const [videoURL, setVideoURL] = useState(
-    "https://www.uptowndubai.ae/application/files/6815/5410/9548/u1920-2MBPS.mp4"
-  );
+  const [videoURL, setVideoURL] = useState(heroVideo);
   return (
     <div className="h-100 w-full">
       <section className="w-full bg-black">
+        <div className="bg-header-gradient absolute h-screen w-full"></div>
         <Video videoURL={videoURL} />
       </section>
       <section className="w-full max-w-screen-xl 2xl:container  mx-auto px-4 xl:px-16">
-        <RegisterButton />
+        <RegisterButton title="register your interest" />
         <div className="grid grid-cols-12  md:grid-cols-6 py-10 lg:py-20 sm:gap-x-4 lg:gap-x-24">
           <div className="w-full lg:aspect-square col-span-12 md:col-span-3 mb-6 sm:mb-0">
-            <img src={UptownDubai} alt="UptownDubai" className="lg:mt-7" />
+            <img src={UptownDubai} alt="CryptoDubai" className="lg:mt-7" />
           </div>
           <div className="w-full lg:w-11/12 flex flex-col justify-around items-start col-span-12 md:col-span-3 mx-auto">
             <H2 className="flex flex-wrap">
               EXPLORE
               <span className="italic font-semibold xl:ml-4">where</span>
-              <span className="sm:text-heading2 xl:text-7xl sm:mt-2 sm:mb-4 xl:mt-1 xl:mb-2.5 2xl:my-0">
+              <span className="sm:text-heading2 xl:text-7xl block">
                 ADVENTURE
               </span>
-              <span className="sm:text-heading2 xl:text-7xl">LIVES</span>
+              <span className="sm:text-heading2 xl:text-7xl mt-1">LIVES</span>
             </H2>
             <div className="py-4 lg:py-0">
               <Paragraph
                 className="pb-4 text-lg"
-                para="Welcome to the world of Uptown Dubai. One like no other.
+                para="Welcome to the world of Crypto Dubai. One like no other.
                 Inherently creative, exciting and eccentric. An evolving
                 development that will continue to tell stories for years to
                 come."
@@ -61,9 +62,9 @@ const Home = () => {
         </div>
       </section>
       <BusinessAdvertisment
-        para="The first of its kind in the Middle East, SO/ Uptown Dubai is a
+        para="The first of its kind in the Middle East, SO/ Crypto Dubai is a
                 playful mix of sophistication and the dynamic style of each
-                locale. Highly creative and fashion-led, SO/ Uptown Dubai is an
+                locale. Highly creative and fashion-led, SO/ Crypto Dubai is an
                 avant-garde masterpiece with a unique 'Just Say SO' attitude.
                 Providing residents and guests with service excellence, yet
                 delivered with an audacious and fashionable twist"
@@ -71,10 +72,15 @@ const Home = () => {
         link="/"
         background="bg-uptown"
         justifyContent="end"
+        alignContent="evenly"
       >
         <H2 className="italic text-4xl xl:text-5xl font-semibold text-center pt-8 px-10 tracking-tighter text-white">
           Be the
-          <span className="font-medium"> first to </span>
+          <span className="font-medium">
+            {" "}
+            first <br />
+            to{" "}
+          </span>
           <span className="font-medium"> say</span>
           <span className="font-semibold"> SO/</span>
         </H2>
@@ -83,7 +89,7 @@ const Home = () => {
         <div className=" flex justify-center flex-col py-6 md:py-10 xl:py-20">
           <H2 className="text-center pb-10">
             INTRODUCING <br />
-            UPTOWN <span className="block sm:inline"></span> TOWER
+            Crypto <span className="block sm:inline"></span> TOWER
           </H2>
           <Paragraph
             className=" text-center  font-body text-lg"
@@ -91,7 +97,7 @@ const Home = () => {
           />
           <div className="grid grid-cols-12 py-4 sm:py-8">
             <div className="w-full lg:aspect-video col-span-12  mb-2 sm:mb-0">
-              <Video videoURL="https://d1wm4a3wbyqlwf.cloudfront.net/uptown/T2_WEB.mp4" />
+              <Video videoURL={towerAnimation} />
             </div>
           </div>
         </div>
@@ -106,7 +112,7 @@ const Home = () => {
                 <div className="w-full h-full lg:h-3/4 bg-uptownConstruction  bg-center bg-no-repeat  bg-cover flex justify-end flex-col  hover:underline">
                   <div className="h-16 bg-black opacity-70 text-center p-2">
                     <Link to="" className="w-full text-white text-lg font-bold">
-                      Uptown Tower by DMCC in Dubai Surpasses 20% Completion
+                      Crypto Tower by DMCC in Dubai Surpasses 20% Completion
                       Milestone
                     </Link>
                   </div>
@@ -124,7 +130,7 @@ const Home = () => {
                     to="/"
                     className="capitalize text-lg  font-bold  opacity-90 hover:underline"
                   >
-                    DMCC awards Uptown Dubai Super Tall Tower Construction
+                    DMCC awards Crypto Dubai Super Tall Tower Construction
                     Contract to Belhasa Six Construct
                   </Link>
                   <div className="flex justify-between w-full mt-4 lg:mt-0  pb-4 sm:pb-0 border-b sm:border-b-0 border-black">
@@ -139,8 +145,8 @@ const Home = () => {
                     to="/"
                     className="capitalize text-lg  font-bold  opacity-90 hover:underline"
                   >
-                    DMCC's Uptown Dubai Proceeds at Pace; Foundation Works
-                    Completed for First Super Tall Tower in Uptown Dubai
+                    DMCC's Crypto Dubai Proceeds at Pace; Foundation Works
+                    Completed for First Super Tall Tower in Crypto Dubai
                     District
                   </Link>
                   <div className="flex justify-between w-full mt-4 lg:mt-0 pb-4 sm:pb-0 border-b sm:border-b-0 border-black">
