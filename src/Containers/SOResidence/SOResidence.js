@@ -116,7 +116,7 @@ const SOResidence = () => {
         </H2>
       </BusinessAdvertisment>
       <section className="w-full mx-auto py-20">
-        <div className="max-w-screen-xl 2xl:container px-4 xl:px-16">
+        <div className="max-w-screen-xl 2xl:container mx-auto w-full  px-4 xl:px-16">
           <H2 className="w-full lg:w-8/12  text-center mx-auto">
             STYLISH
             <span className="italic font-medium xl:ml-4">and </span>
@@ -162,8 +162,8 @@ const SOResidence = () => {
       <section className="w-full  bg-lightGrey">
         <div className="max-w-screen-xl 2xl:container mx-auto px-4 xl:px-16">
           <div className="grid grid-cols-12  md:grid-cols-6 py-10 lg:py-20 sm:gap-x-4 lg:gap-x-16 ">
-            <div className="w-full  h-screen col-span-12 md:col-span-3 mb-6 sm:mb-0 bg-ownersBenifit bg-center bg-no-repeat  bg-auto"></div>
-            <div className="w-full lg:w-11/12 flex flex-col justify-evenly items-start col-span-12 md:col-span-3 mx-auto lg:pl-6">
+            <div className="w-full  h-screen col-span-12 md:col-span-3 mb-6 sm:mb-0 bg-ownersBenifit bg-right bg-no-repeat  bg-auto"></div>
+            <div className="w-full lg:w-11/12 flex flex-col justify-evenly 2xl:justify-center items-start col-span-12 md:col-span-3 mx-auto lg:pl-6">
               <H2 className="flex flex-wrap">OWNERS BENEFITS</H2>
               <H4 className="text-black " title="Top-tier status in Le Club" />
               <div className="py-2 lg:py-0">

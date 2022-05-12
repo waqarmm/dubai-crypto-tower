@@ -6,7 +6,6 @@ const Video = ({ videoURL, className }) => {
       <video
         id="background-video"
         className={`w-full ${className}`}
-        // className="w-full"
         loop
         muted
         autoPlay

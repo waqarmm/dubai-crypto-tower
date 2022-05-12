@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Logo from "../../assets/images/uptown-logo.svg";
 import Dmcc from "../../assets/images/dmcc.svg";
 import Divider from "../Divider/Divider";
@@ -8,9 +9,12 @@ const Footer = () => {
     <footer className=" w-full h-auto bg-black  mx-auto px-8 xl:px-16">
       <div className="max-w-screen-xl 2xl:container mx-auto grid grid-cols-12  md:grid-cols-12 py-8 sm:gap-x-4 lg:gap-x-2 my-10 lg:mt-8 xl:mb-20">
         <div className="hidden w-full  sm:flex  items-start md:items-end col-span-12 md:col-span-4 lg:col-span-6  mb-6 sm:mb-0">
-          <div className="flex items-start w-full h-full text-white">
+          <Link
+            to="/"
+            className="flex items-start  w-full h-full text-white cursor-pointer"
+          >
             <img src={Logo} alt="logo" className="xl:w-2/5" />
-          </div>
+          </Link>
         </div>
         <div className="w-full lg:w-11/12  col-span-12 md:col-span-4 lg:col-span-3 mx-auto xl:pl-10  mb-8 text-sm">
           <h4 className="uppercase text-white font-bold mb-4 text-lg">
@@ -46,8 +50,8 @@ const Footer = () => {
         <p className="order-last sm:order-1 text-xs text-white font-semibold py-4 sm:pt-0 sm:m-0 mx-auto">
           All rights reserved. © Uptown Dubai DMCC 2022
         </p>
-        <div className="order-first  flex items-start sm:hidden w-2/5 sm:w-full h-full text-white">
-          <img src={Logo} alt="logo" className="xl:w-2/5 " />
+        <div className="order-first  flex items-start sm:hidden w-2/5 sm:w-full h-full text-white ">
+          <img src={Logo} alt="logo" className="xl:w-2/5" />
         </div>
         <div className="order-2 flex items-center  h-full text-white">
           <img src={Dmcc} alt="logo" className=" " />

@@ -76,7 +76,7 @@ const OfficeLeasing = () => {
       </section>
       <section className="w-full  mx-auto max-w-screen-xl 2xl:container py-8 px-4 xl:px-16">
         <div className="grid grid-cols-12  md:grid-cols-6  py-10 lg:py-12 sm:gap-x-4 lg:gap-x-10 gap-y-4 ">
-          <div className="w-full  col-span-12 md:col-span-3  bg-officeLeasingTower  bg-no-repeat bg-top  bg-cover"></div>
+          <div className="w-full  col-span-12 md:col-span-3  bg-officeLeasingTower  bg-no-repeat bg-top  bg-cover 2xl:bg-contain"></div>
           <div className="w-full lg:w-10/12  flex flex-col justify-center  col-span-12 md:col-span-3 mx-auto">
             <H2 className="flex flex-col  uppercase  font-bold font-times  py-4">
               DESIGNED <br />
